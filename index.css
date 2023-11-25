@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;500&family=Poppins:wght@300&display=swap');
+
+@import url("./css/reboot.css");
+@import url("./css/header.css");
+@import url("./css/home.css");
+
+@import url('./css/footer.css');
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #0c0c0c;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.border {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: unset;
+  border-bottom: unset;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.infinity__slider {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  padding: 21px 0;
+  border-bottom: 1px dashed #9d84b8;
+}
+
+.slider-shadows {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to left, #0c0c0c, transparent 300px, transparent calc(100% - 300px), #0c0c0c);
+  z-index: 50;
+}
+
+.infinity__slider .slider__content {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  width: max-content;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 70px;
+  letter-spacing: 0.25em;
+  color: white;
+  text-align: center;
+  animation: slidein 40s linear infinite;
+}
+
+
+
+.text-stroke{
+  position: relative;
+  -webkit-text-stroke: .5px #fff;
+  color: transparent;
+  
+}
+
+div.text-stroke{
+  padding: 15px;
+}
+
+div.text-stroke::before{
+  content: '*';
+  position: absolute;
+  top: -4px;
+  left: -3px;
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
