@@ -1,0 +1,245 @@
+
+
+
+.case__top{
+  margin-top: 200px;
+}
+
+.case__top-body{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.case__top-title{
+  font-weight: 500;
+  font-size: 60px;
+}
+
+.case__top-descr{
+  max-width: 610px;
+  margin-top: 10px;
+  font-weight: 300;
+  font-size: 17px;
+  color: #ddd;
+}
+
+.case__top-info{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 330px));
+  gap: 30px;
+}
+
+.case__top-info .item-descr{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.case__top-info .item-title{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.case-slider{
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  margin-top: 100px;
+  padding: 0 50px;
+  overflow-x: scroll;
+}
+
+.case-slider img{
+  flex-shrink: 0;
+  aspect-ratio: 1.9 / 1;
+  height: 500px;
+}
+
+.case__challenge{
+  padding: 120px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.case__challenge .container{
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.case__challenge-title{
+  font-weight: 500;
+  font-size: 45px;
+}
+
+.case__challenge-descr{
+  max-width: 740px;
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.case__challenge-subdescr{
+  max-width: 721px;
+  margin-top: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: #ddd;
+}
+
+.case__challenge-tabs{
+  max-width: 740px;
+  margin-top: 100px;
+}
+
+.case__challenge-tab .tab-top{
+  position: relative;
+  margin-bottom: 20px;
+  padding: 27px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+}
+
+.case__challenge-tab .tab-top::before, .servises-tab .tab-top::after{
+  content: '';
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all .2s;
+}
+
+.case__challenge-tab.active .tab-top::before{
+  transform: rotate(90deg);
+  transition: all .2s;
+}
+
+.case__challenge-tab .tab-body{
+  display: grid;
+  grid-template-rows: 0fr;
+  padding: 15px 0 0 0 ;
+  overflow: hidden;
+  transition: all .2s;
+}
+
+.case__challenge-tab.active .tab-body{
+  grid-template-rows: 1fr;
+}
+
+.case__challenge-tab .tab-content{
+  min-height: 0;
+  font-size: 17px;
+  line-height: 1.8em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: #ddd;
+}
+
+.case-img{
+  width: 100%;
+  margin: 120px 0 ;
+}
+
+.case-img img{
+  width: 100%;
+  aspect-ratio: 1.5/ 1;
+}
+
+.story .container{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.story-title{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.story-descr{
+  max-width: 560px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: #ddd;
+}
+
+
+.audio{
+  background-color: #141414;
+  padding: 120px 0 160px;
+}
+
+.audio-subtitle{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+}
+
+.audio-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 18px;
+  font-weight: 700;
+  font-size: 66px;
+  color: #141414;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+.audio-title svg{
+  width: 51px;
+  height: 51px;
+}
+
+
+@media (max-width: 1024px) {
+  .case__challenge-tabs{
+    margin-top: 50px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .story .container{
+    flex-direction: column;
+  }
+  .case__challenge .container{
+    flex-direction: column;
+  }
+  .case__challenge-descr{
+    font-size: 18px;
+  }
+  .audio-title{
+    font-size: 40px;
+  }
+  .case-slider img{
+    flex-shrink: 0;
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .case__challenge-tab .tab-top{
+    font-size: 24px;
+    line-height: 1.4em;
+  }
+  .case__top-body{
+    flex-direction: column;
+    gap: 40px;
+  }
+  .case__top-info{
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,10 +1,12 @@
 
 .header{
+  position: fixed;
+  width: 100%;
   backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   font-family: 'Inter', sans-serif;
-
+  z-index: 1000;
 }
 
 .header .container{
@@ -36,24 +38,24 @@
 .header-menu {
   position: absolute;
   top: 0;
-  left: 100%;
+  right: 0;
+  width: 0;
   background-color: #0C0C0C;
-  overflow: hidden;
   transition: all .3s;
-  z-index: 1000;
+  z-index: 9999;
 }
 .header-menu.active{
   transition: all .3s;
-  left: 0;
-  right: 0;
+  width: 100vw;
 }
 
 .header .menu-container {
   display: flex;
   gap: 20px;
-  max-width: 1320px;
   min-height: 100vh;
-  margin: 0 auto;
+  width: 100vw;
+  padding: 0px 40px;
+  overflow-y: scroll;
 }
 
 .header .list {
@@ -155,3 +157,11 @@
   transform: rotate(-45deg);
 }
 
+@media (max-width: 767px) {
+  .header .menu-container{
+    flex-direction: column;
+  } 
+  .header .menu-contacts{
+    border: none;
+  }
+}

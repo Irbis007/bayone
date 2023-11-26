@@ -1,148 +1,182 @@
-const headerHamburger = document.querySelectorAll('.header-hamburger');
-const headerMenu = document.querySelectorAll('.header-menu');
-const headerNav = document.querySelectorAll('.header-nav .item');
-const headerNavClose = document.querySelectorAll('.header-menu .close');
-const homeTab = document.querySelectorAll('.servises-tab');
+const headerHamburger = document.querySelectorAll(".header-hamburger");
+const headerMenu = document.querySelectorAll(".header-menu");
+const headerNav = document.querySelectorAll(".header-nav .item");
+const headerNavClose = document.querySelectorAll(".header-menu .close");
+const homeTab = document.querySelectorAll(".servises-tab");
 
 // RECENT SLIDER VARS
-const recentSliderWrapper = document.querySelector('.recent-slider');
-const recentSliderWindow = document.querySelector('.recent__work-list');
-const recentSliderItem = document.querySelectorAll('.recent__work-item');
-const recentSliderBtnPrev = document.querySelector('.recent__work .btn-prev');
-const recentSliderBtnNext = document.querySelector('.recent__work .btn-next');
+const recentSliderWrapper = document.querySelector(".recent-slider");
+const recentSliderWindow = document.querySelector(".recent__work-list");
+const recentSliderItem = document.querySelectorAll(".recent__work-item");
+const recentSliderBtnPrev = document.querySelector(".recent__work .btn-prev");
+const recentSliderBtnNext = document.querySelector(".recent__work .btn-next");
 
 // TESTIMONIALS SLIDER VARS
-const testimonialsSliderWrapper = document.querySelector('.testimonials-slider');
-const testimonialsSliderWindow = document.querySelector('.testimonials-list');
-const testimonialsSliderItem = document.querySelectorAll('.testimonials-item');
-const testimonialsSliderBtnPrev = document.querySelector('.testimonials .btn-prev');
-const testimonialsSliderBtnNext = document.querySelector('.testimonials .btn-next');
-const testimonialsSliderCount = document.querySelector('.testimonials .slider-count');
+const testimonialsSliderWrapper = document.querySelector(".testimonials-slider");
+const testimonialsSliderWindow = document.querySelector(".testimonials-list");
+const testimonialsSliderItem = document.querySelectorAll(".testimonials-item");
+const testimonialsSliderBtnPrev = document.querySelector(".testimonials .btn-prev");
+const testimonialsSliderBtnNext = document.querySelector(".testimonials .btn-next");
+const testimonialsSliderCount = document.querySelector(".testimonials .slider-count");
 
+// CASE
 
+const caseTab = document.querySelectorAll(".case__challenge-tab");
 
+const caseSlider = document.querySelectorAll(".case-slider");
 
+headerHamburger.forEach((item, i) => {
+  item.addEventListener("click", () => {
+    headerMenu[i].classList.toggle("active");
+  });
+});
 
-headerHamburger.forEach((item, i) =>{
-  item.addEventListener('click', () =>{
-    headerMenu[i].classList.toggle('active')
-  })
-})
-
-
-headerNav.forEach(item => {
-  item.addEventListener('mouseout', () =>{
-    headerNavHover(headerNav, 'mouseout')
-  })
-  item.addEventListener('mouseover', () =>{
-    headerNavHover(headerNav, 'mouseover')
-    item.style.opacity = '1'
-  })
-})
-
+headerNav.forEach((item) => {
+  item.addEventListener("mouseout", () => {
+    headerNavHover(headerNav, "mouseout");
+  });
+  item.addEventListener("mouseover", () => {
+    headerNavHover(headerNav, "mouseover");
+    item.style.opacity = "1";
+  });
+});
 
 function headerNavHover(list, event) {
-  list.forEach(item =>{
-    if(event == 'mouseover'){
-      item.style.opacity = '.5'
-    } else{
-      item.style.opacity = '1'
+  list.forEach((item) => {
+    if (event == "mouseover") {
+      item.style.opacity = ".5";
+    } else {
+      item.style.opacity = "1";
     }
-  })
+  });
 }
 
-headerNavClose.forEach((item, i) =>{
-  item.addEventListener('click', () =>{
-    headerMenu[i].classList.toggle('active')
-  })
-})
+headerNavClose.forEach((item, i) => {
+  item.addEventListener("click", () => {
+    headerMenu[i].classList.toggle("active");
+  });
+});
 
+homeTab.forEach((item) => {
+  item.addEventListener("click", () => {
+    removeActiveTab(homeTab);
+    item.classList.add("active");
+  });
+});
 
-homeTab.forEach(item => {
-  item.addEventListener('click', () =>{
-    removeActiveHomeTab(homeTab)
-    item.classList.add('active')
-  })
-})
-
-function removeActiveHomeTab(list) {
-  list.forEach(item => {
-    item.classList.remove('active')
-  })
+function removeActiveTab(list) {
+  list.forEach((item) => {
+    item.classList.remove("active");
+  });
 }
+
+caseTab.forEach((item) => {
+  item.addEventListener("click", () => {
+    removeActiveTab(caseTab);
+    item.classList.add("active");
+  });
+});
 
 // RECENT SLIDER
 
+let recentSliderItemWidth = recentSliderItem[0] ? recentSliderItem[0].clientWidth : null;
+let recentSliderItems = recentSliderItem ? recentSliderItem.length : null;
+let recentOffset = 0;
+let recentSlideShow;
+let windowWidth = window.innerWidth;
 
-let recentSliderItemWidth = recentSliderItem[0].clientWidth
-let recentSliderItems = recentSliderItem.length
-let recentOffset = 0
-let recentSlideShow 
-let windowWidth = window.innerWidth
 
-console.log(recentSliderItems)
-
-if(windowWidth < 520){
-  recentSlideShow = 1
+if (windowWidth < 520) {
+  recentSlideShow = 1;
 } else {
-  recentSlideShow = 2
+  recentSlideShow = 2;
 }
-
-
-recentSliderBtnPrev.addEventListener('click', () =>{
-  if(recentOffset > 0){
-    recentOffset--
-    setStyleForRecentSlider()
-    recentSliderBtnPrev.classList.remove('unactive')
-    recentSliderBtnNext.classList.remove('unactive')
-  } else{
-    recentSliderBtnPrev.classList.add('unactive')
-  }
-})
-
-recentSliderBtnNext.addEventListener('click', () =>{
-  if(recentOffset + recentSlideShow < recentSliderItems ){
-    recentOffset++
-    setStyleForRecentSlider()
-    recentSliderBtnNext.classList.remove('unactive')
-    recentSliderBtnPrev.classList.remove('unactive')
-  } else{
-    recentSliderBtnNext.classList.add('unactive')
-  }
-})
-
+if (recentSliderBtnPrev) {
+  recentSliderBtnPrev.addEventListener("click", () => {
+    if (recentOffset > 0) {
+      recentOffset--;
+      setStyleForRecentSlider();
+      recentSliderBtnPrev.classList.remove("unactive");
+      recentSliderBtnNext.classList.remove("unactive");
+    } else {
+      recentSliderBtnPrev.classList.add("unactive");
+    }
+  });
+}
+if (recentSliderBtnNext) {
+  recentSliderBtnNext.addEventListener("click", () => {
+    if (recentOffset + recentSlideShow < recentSliderItems) {
+      recentOffset++;
+      setStyleForRecentSlider();
+      recentSliderBtnNext.classList.remove("unactive");
+      recentSliderBtnPrev.classList.remove("unactive");
+    } else {
+      recentSliderBtnNext.classList.add("unactive");
+    }
+  });
+}
 
 function setStyleForRecentSlider() {
-  recentSliderWindow.style.transform = `translateX(-${(recentSliderItemWidth + 30) * recentOffset}px)`
+  recentSliderWindow.style.transform = `translateX(-${
+    (recentSliderItemWidth + 30) * recentOffset
+  }px)`;
 }
-
-
-
 
 // TESTIMONIALS SLIDER
 
-testimonialsSliderWrapper
-testimonialsSliderWindow
-testimonialsSliderItem
-testimonialsSliderBtnPrev
-testimonialsSliderBtnNext
+if (testimonialsSliderWrapper) {
+  testimonialsSliderWrapper.style.width = testimonialsSliderItem[0].clientWidth + "px";
+}
 
+window.addEventListener("resize", () => {
+  if (testimonialsSliderWrapper) {
+    testimonialsSliderWrapper.style.width = testimonialsSliderItem[0].clientWidth + "px";
+  }
+});
 
-testimonialsSliderWrapper.style.width = testimonialsSliderItem[0].clientWidth + 'px'
+let testimonialsSliderItems = testimonialsSliderItem.length;
 
-window.addEventListener('resize', () =>{
-  testimonialsSliderWrapper.style.width = testimonialsSliderItem[0].clientWidth + 'px'
-  console.log(testimonialsSliderItem[0].clientWidth)
-})
+if (testimonialsSliderCount) {
+  testimonialsSliderCount.textContent = `1/${testimonialsSliderItems}`;
+}
 
+let mainContainer = document.querySelector("body");
+let triggerBlock = document.querySelector(".case-slider");
 
+let isHorizontalScrolling = false;
 
-
-let testimonialsSliderItems = testimonialsSliderItem.length 
-
-
-testimonialsSliderCount.textContent = `1/${testimonialsSliderItems}`
-
-
-
-
+let scrollPosition = 0;
+window.addEventListener("wheel", function (e) {
+  if (triggerBlock) {
+    if (
+      this.window.scrollY + 100 >= triggerBlock.offsetTop &&
+      triggerBlock.clientWidth != triggerBlock.scrollWidth - triggerBlock.scrollLeft &&
+      e.deltaY > 0 &&
+      this.window.scrollY <= triggerBlock.clientHeight + triggerBlock.offsetTop - 90
+    ) {
+      console.log(3333);
+      mainContainer.style.overflow = "hidden";
+      if (e.deltaY > 0) {
+        scrollPosition += 40;
+      } else {
+        scrollPosition -= 40;
+      }
+      triggerBlock.scrollLeft = scrollPosition;
+    } else if (
+      e.deltaY < 0 &&
+      this.window.scrollY + 100 <= triggerBlock.offsetTop &&
+      triggerBlock.scrollLeft != 0
+    ) {
+      console.log("erdgfjh");
+      mainContainer.style.overflow = "hidden";
+      if (e.deltaY > 0) {
+        scrollPosition += 40;
+      } else {
+        scrollPosition -= 40;
+      }
+      triggerBlock.scrollLeft = scrollPosition;
+    } else {
+      mainContainer.style.overflow = "auto";
+    }
+  }
+});

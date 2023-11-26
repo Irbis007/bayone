@@ -1,0 +1,254 @@
+
+
+.about-subtitle{
+  margin-top: 85px;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about-title{
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+
+.about-image{
+  width: 100%;
+  height: 420px;
+  margin-top: 80px;
+}
+
+.about-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wwa{
+  padding: 120px 0;
+}
+
+.wwa-subtitle{
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.wwa-title{
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 120%;
+}
+
+.wwa-descr{
+  max-width: 1040px;
+  margin-top: 33px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 120%;
+}
+
+.wwa-list{
+  display: grid;
+  grid-template-columns: repeat(3, 190px);
+  justify-content: space-between;
+  gap: 27px;
+  max-width: 1130px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.wwa-list .item{
+  list-style: '+';
+  padding-left: 10px;
+}
+
+.wwa-achievements{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.achievement-item{
+  max-width: 370px;
+  width: 100%;
+}
+
+.achievement-title{
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  font-weight: 500;
+  font-size: 86px;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  color: black;
+}
+
+.achievement-descr{
+  margin-top: 35px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.about-video{
+  width: 100%;
+}
+
+.companies-list{
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px 0;
+  max-width: 1030px;
+  margin-top: 120px;
+  margin-bottom: 100px;
+}
+
+.team-subtitle {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.team-title {
+  font-weight: 500;
+  font-size: 36px;
+}
+
+.team-list {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.team-item {
+  position: relative;
+}
+
+.item-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1.11;
+}
+
+.item-text {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+}
+
+.item-subtitle {
+  font-size: 12px;
+  color: #ddd;
+}
+
+.item-title {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.team-item.become{
+  aspect-ratio: 1;
+}
+.become-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  gap: 50px;
+  padding: 40px 10px 30px 40px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-top: none;
+  border-left: none;
+}
+
+.become-icon svg{
+  width: 43px;
+  height: 43px;
+}
+
+.become-title{
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+.about-email{
+  margin-top: 85px;
+  margin-bottom: 80px;
+}
+
+.about-email .email-subtitle{
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about-email .email-title{
+  margin-top: 25px;
+  font-weight: 500;
+  font-size: 57px;
+  text-decoration: underline;
+  line-height: 72px;
+}
+
+@media (max-width: 1024px) {
+  .wwa-achievements{
+    flex-direction: column;
+  }
+  .achievement-item{
+    max-width: 100%;
+  }
+  .about-video{
+    height: 300px;
+  }
+}
+@media (max-width: 991px) {
+  .about-title{
+    font-size: 40px;
+  }
+  .wwa-title{
+    font-size: 38px;
+  }
+  .companies-list{
+    grid-template-columns: repeat(3, max-content);
+  }
+  .team-list{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-email .email-title{
+    font-size: 35px;
+  }
+}
+@media (max-width: 767px) {
+  .wwa-list{
+    grid-template-columns: 1fr;
+  }
+  .wwa-item:nth-child(4n + 1){
+    margin-top: 40px;
+  }
+  .companies-list{
+    grid-template-columns: repeat(2, max-content);
+  }
+  .team-list{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .become-wrapper{
+    flex-direction: row;
+    justify-content: unset;
+  }
+}
