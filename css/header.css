@@ -36,7 +36,7 @@
 }
 
 .header-menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 0;
@@ -52,7 +52,7 @@
 .header .menu-container {
   display: flex;
   gap: 20px;
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   padding: 0px 40px;
   overflow-y: scroll;
@@ -161,7 +161,15 @@
   .header .menu-container{
     flex-direction: column;
   } 
+  .header .list{
+    width: 100%;
+  }
   .header .menu-contacts{
+    width: 100%;
+    padding-bottom: 100px;
     border: none;
+  }
+  .header .link{
+    font-size: 30px;
   }
 }

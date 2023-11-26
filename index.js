@@ -85,7 +85,6 @@ let recentOffset = 0;
 let recentSlideShow;
 let windowWidth = window.innerWidth;
 
-
 if (windowWidth < 520) {
   recentSlideShow = 1;
 } else {
@@ -122,23 +121,6 @@ function setStyleForRecentSlider() {
   }px)`;
 }
 
-// TESTIMONIALS SLIDER
-
-if (testimonialsSliderWrapper) {
-  testimonialsSliderWrapper.style.width = testimonialsSliderItem[0].clientWidth + "px";
-}
-
-window.addEventListener("resize", () => {
-  if (testimonialsSliderWrapper) {
-    testimonialsSliderWrapper.style.width = testimonialsSliderItem[0].clientWidth + "px";
-  }
-});
-
-let testimonialsSliderItems = testimonialsSliderItem.length;
-
-if (testimonialsSliderCount) {
-  testimonialsSliderCount.textContent = `1/${testimonialsSliderItems}`;
-}
 
 let mainContainer = document.querySelector("body");
 let triggerBlock = document.querySelector(".case-slider");
@@ -180,3 +162,57 @@ window.addEventListener("wheel", function (e) {
     }
   }
 });
+
+// TESTIMONIALS SLIDER
+
+
+
+
+
+const images = document.querySelectorAll(".slider .slider-line li");
+const sliderLine = document.querySelector(".slider .slider-line");
+let count = 0;
+let width;
+
+let testimonialsSliderItems = testimonialsSliderItem.length;
+
+if(testimonialsSliderCount){
+  testimonialsSliderCount.textContent = `${count+1}/${testimonialsSliderItems}`;
+}
+
+
+function init() {
+  console.log("resize");
+  width = document.querySelector(".slider").offsetWidth;
+  sliderLine.style.width = width * images.length + "px";
+  images.forEach((item) => {
+    item.style.width = width + "px";
+    item.style.height = "auto";
+  });
+  rollSlider();
+}
+
+init();
+window.addEventListener("resize", init);
+
+document.querySelector(".slider-next").addEventListener("click", function () {
+  count++;
+  if (count >= images.length) {
+    count = 0;
+  }
+  testimonialsSliderCount.textContent = `${count+1}/${testimonialsSliderItems}`;
+  rollSlider();
+});
+
+document.querySelector(".slider-prev").addEventListener("click", function () {
+  count--;
+  if (count < 0) {
+    count = images.length - 1;
+  }
+  testimonialsSliderCount.textContent = `${count+1}/${testimonialsSliderItems}`;
+  rollSlider();
+});
+
+function rollSlider() {
+  sliderLine.style.transform = "translate(-" + count * width + "px)";
+}

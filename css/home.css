@@ -1,34 +1,62 @@
 /* INTRO ============================================== */
 
+.intro-section{
+  display: flex;
+  justify-content: center;
+  background: url('../assets/images/intro-bg.png') center center / cover no-repeat;
+  padding-bottom: 200px;
+}
 
+.intro-section .container{
+  width: 950px;
+}
 
 .intro{
   margin-top: 51px;
 }
 
 .intro-title{
+  margin-left: auto;
   display: inline-block;
   font-family: 'Inter', sans-serif;
-  font-size: 150px;
+  font-size: 117px;
   color: #fff;
   text-transform: uppercase;
 }
 
 .intro-descr{
+  display: inline-block;
   font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 23px;
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   color: #ddd;
+
+  max-width: 260px;
 }
 
-.intro-img{
+.intro-img.first-img{
+  display: inline-block;
+  width: 300px;
+}
+
+.intro-img.first-img img{
+width: 100%;
+}
+
+.intro-img.second-img{
   position: absolute;
+  margin-left: -230px;
+  margin-top: 40px;
+}
+
+.intro-img.second-img img{
+  width: 220px;
 }
 
 .intro-text-1{
-  margin: 0px 40px 0 auto;
+  margin: 0px 40px 0 70px;
 }
 
 .intro-text-2{
@@ -36,7 +64,17 @@
 }
 
 .intro-text-3{
+  position: relative;
+  z-index: 100;
   margin-top: 40px;
+  padding-right: 160px;
+}
+.intro-text-5{
+  width: max-content;
+  display: block;
+  position: relative;
+  z-index: 100;
+  margin: 0 auto;
 }
 
 
@@ -80,18 +118,48 @@
 }
 
 @media (max-width:1024px) {
+  .intro-section .conteiner{
+    width: 100%;
+  }
   .company .container{
     flex-direction: column;
   }
   .company-title{
+
     margin-top: 50px;
     text-indent: 0;
+  }
+  .intro-img, .intro-img.first-img{
+    display: none;
+  }
+  .intro-text-1{
+    margin: 0;
+    
+  }
+  .intro-text-3{
+    padding: 0;
+  }
+  .intro-text-4{
+    display: block;
+    max-width: 70%;
+  }
+  .intro-text-5{
+    margin: 0;
   }
 }
 
 @media (max-width: 767px) {
   .company-title{
     font-size: 24px;
+  }
+  .intro-text-2{
+    margin: 0 0 0 10px;
+  }
+  .intro-descr{
+    max-width: 100%;
+  }
+  .intro-title{
+    font-size: 70px;
   }
 }
 
@@ -466,6 +534,21 @@
 
 .testimonials-slider {
   overflow: hidden;
+}
+
+.slider {
+  border: 2px solid black;
+  max-width: 80%;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.slider-line {
+  width: 1024px;
+  display: flex;
+  position: relative;
+  left: 0;
+  transition: all ease 1s;
 }
 
 .testimonials-list {
