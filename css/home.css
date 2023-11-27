@@ -195,6 +195,7 @@ width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
+  cursor: pointer;
 }
 
 .servises-tab .tab-top::before, .servises-tab .tab-top::after{
@@ -435,6 +436,10 @@ width: 100%;
   transition: all .5s;
 }
 
+.recent__work-item a{
+  text-decoration: none;
+}
+
 .recent__work-item .item-image{
   width: 520px;
   height: 400px;
@@ -454,6 +459,7 @@ width: 100%;
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 23px;
+  color:#212529;
 }
 
 .recent__work-item .item-title{
@@ -461,6 +467,7 @@ width: 100%;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 24px;
+  color: #000;
 }
 
 @media (max-width: 767px) {

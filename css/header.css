@@ -139,6 +139,7 @@
   width: 15px;
   height: 15px;
   z-index: 100;
+  cursor: pointer;
 }
 
 .header .close::before, .close::after{
@@ -172,5 +173,8 @@
   }
   .header .link{
     font-size: 30px;
+  }
+  .header .container{
+    padding: 36px 15px;
   }
 }

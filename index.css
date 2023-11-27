@@ -72,10 +72,9 @@ main {
   align-items: center;
   gap: 70px;
   width: max-content;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 70px;
-  letter-spacing: 0.25em;
   color: white;
   text-align: center;
   animation: slidein 40s linear infinite;
