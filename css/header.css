@@ -168,7 +168,7 @@
   }
   .header .menu-contacts{
     width: 100%;
-    padding-bottom: 100px;
+    padding: 100px 0 ;
     border: none;
   }
   .header .link{
@@ -176,5 +176,9 @@
   }
   .header .container{
     padding: 36px 15px;
+  }
+  .header .contact-social .social-list{
+    row-gap: 15px;
+    flex-wrap: wrap;
   }
 }
