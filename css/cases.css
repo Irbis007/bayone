@@ -87,6 +87,9 @@
   .cases-body{
     grid-template-columns: 1fr;
   }
+  .cases-body .item .item-hover{
+    transition: all .5s;
+  }
   .cases-body .item .item-title{
     font-size: 18px;
   }
